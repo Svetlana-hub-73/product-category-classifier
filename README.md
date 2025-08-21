@@ -11,22 +11,70 @@ cd product-category-classifier
 pip install -r requirements.txt
 
 
+# Класификатор категорија производа 🛒
 
-# Product Category Classifier
+## 📌 Опис пројекта
+Овај пројекат је развијен са циљем да аутоматски класификује производе по категоријама на основу њихових описа.  
+Модел је трениран на скупу података `products.csv`, који садржи називе, описе и категорије производа.
 
-A project for automatically classifying products into categories.
+---
 
-# # Project structure
+## 📂 Структура пројекта
+product-category-classifier/
+├── data/ # Скуп података
+│ └── products.csv
+├── notebooks/ # Jupyter бележнице са анализом
+│ └── product_category_classifier.ipynb
+├── scripts/ # Скрипте за тренирање и тестирање модела
+│ ├── train_model.py
+│ └── predict_category.py
+├── models/ # Сачувани модели (опционо)
+└── README.md # Упутство за покретање пројекта
 
-- 'data/raw/products.csv' - source dataset
-- 'data/processed/' - cleared data
-- 'notebooks/' - Jupyter notebooks for analysis and training
-- 'scripts/train _ model.py' - model training
-- 'scripts/predict _ category.py' - interactive model testing
-- 'models/' - saved model and vectorizer
 
-## installation
 
+---
+
+## 🚀 Како покренути пројекат
+
+### 1. Клонирати репозиторијум
 ```bash
+git clone https://github.com/Svetlana-hub-73/product-category-classifier.git
+cd product-category-classifier
+
+
+#Инсталирати зависности
 pip install -r requirements.txt
 
+# Тренирати модел
+python scripts/train_model.py
+
+# Тестирати модел
+python scripts/predict_category.py
+#### Функционалности пројекта
+
+#Учитавање и анализа података
+
+#Обрада текста (TF-IDF / CountVectorizer)
+
+#Тренирање модела машинског учења
+
+#Визуелизација резултата
+
+# Интерактивно тестирање модела
+
+
+###Коришћене библиотеке
+
+#pandas
+
+#numpy
+
+#scikit-learn
+
+#matplotlib / seaborn
+
+#joblib 
+
+### Аутор
+# https://github.com/Svetlana-hub-73/product-category-classifier/tree/main
