@@ -6,32 +6,33 @@ from sklearn.metrics import classification_report
 import joblib
 import os
 
-# Создаем папку для моделей
+# Create a folder for models
 os.makedirs("models", exist_ok=True)
 
-# Загружаем данные
+# Loading data
 df = pd.read_csv("data/raw/products.csv")
 
-# Чистим колонки
+# Cleaning the speakers
 df.columns = df.columns.str.strip()
 df = df.dropna(subset=["Product Title", "Category Label"])
 df["Product Title"] = df["Product Title"].str.lower()
 df = df.drop_duplicates()
 
-# Разделение на признаки и целевую переменную
+# Split into characteristics and target variable
 X = df["Product Title"]
 y = df["Category Label"]
 
-# Векторизация текста
+
+# Text vectorization
 vectorizer = TfidfVectorizer()
 X_vectorized = vectorizer.fit_transform(X)
 
-# Обучение модели
+# Model training
 model = LogisticRegression(max_iter=1000)
 model.fit(X_vectorized, y)
 
-# Сохраняем модель и векторизатор
+# Save the model and vectorizer
 joblib.dump(model, "models/product_classifier.pkl")
 joblib.dump(vectorizer, "models/vectorizer.pkl")
 
-print("Модель и векторизатор успешно сохранены!")
+print("Model and vectorizer saved successfully!")

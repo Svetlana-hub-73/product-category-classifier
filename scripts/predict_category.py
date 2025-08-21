@@ -1,12 +1,12 @@
 import os
 import joblib
 
-# Проверка наличия модели
+# Checking for a model
 if not os.path.exists("models/product_classifier.pkl") or not os.path.exists("models/vectorizer.pkl"):
-    print("Ошибка: модель или векторизатор не найдены. Сначала запустите train_model.py")
+    print("mistake: No model or vectorizer found. Will start first train_model.py")
     exit()
 
-# Загрузка
+# loading
 model = joblib.load("models/product_classifier.pkl")
 vectorizer = joblib.load("models/vectorizer.pkl")
 
@@ -14,10 +14,10 @@ def predict_product_category(product_name):
     X = vectorizer.transform([product_name])
     return model.predict(X)[0]
 
-# Интерактивный режим
+# interactive mode
 while True:
-    product_name = input("Введите название продукта (или 'exit' для выхода): ")
+    product_name = input("Enter product name (or'exit 'to exit): ")
     if product_name.lower() == "exit":
         break
     category = predict_product_category(product_name)
-    print(f"Предсказанная категория: {category}\n")
+    print(f"Predicted category: {category}\n")

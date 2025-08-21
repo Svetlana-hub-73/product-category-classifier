@@ -9,3 +9,24 @@ This project is a system for classifying goods into categories using machine lea
 git clone https://github.com/Svetlana-hub-73/product-category-classifier.git
 cd product-category-classifier
 pip install -r requirements.txt
+
+
+
+# Product Category Classifier
+
+A project for automatically classifying products into categories.
+
+# # Project structure
+
+- 'data/raw/products.csv' - source dataset
+- 'data/processed/' - cleared data
+- 'notebooks/' - Jupyter notebooks for analysis and training
+- 'scripts/train _ model.py' - model training
+- 'scripts/predict _ category.py' - interactive model testing
+- 'models/' - saved model and vectorizer
+
+## installation
+
+```bash
+pip install -r requirements.txt
+
